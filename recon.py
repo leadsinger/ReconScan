@@ -309,7 +309,7 @@ def enum_http(address, port, service, basedir):
 
 	run_cmds([
 		(
-			e('gobuster -w /usr/share/seclists/Discovery/Web_Content/common.txt -t 10 -u {scheme}://{address}:{port} -e -s "200,204,301,302,307,403,500" | tee "{basedir}/{port}_http_dirb.txt"'),
+			e('gobuster dir -w /usr/share/seclists/Discovery/Web_Content/common.txt -t 10 -u {scheme}://{address}:{port} -e -s "200,204,301,302,307,403,500" | tee "{basedir}/{port}_http_dirb.txt"'),
 			e('gobuster-{port}')
 		),
 		(
